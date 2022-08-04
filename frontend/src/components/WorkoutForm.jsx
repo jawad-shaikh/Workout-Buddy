@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-export default function WorkoutForm( {getWorkouts} ) {
+export default function WorkoutForm({workouts, setWorkouts}) {
 
     const [title, setTitle] = useState('');
     const [reps, setReps] = useState('');
     const [load, setLoad] = useState('');
     const [error, setError] = useState(null);
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -25,7 +24,7 @@ export default function WorkoutForm( {getWorkouts} ) {
             setReps('')
             setLoad('')
             
-            getWorkouts()
+            setWorkouts([data, ...workouts])
         })
         .catch((error) => {
             setError(error.message)

@@ -38,7 +38,7 @@ export default function Home() {
           <WorkoutDetails key={workout._id} workout={workout} deleteWorkout={deleteWorkout} />
         ))}
       </div>
-      <WorkoutForm getWorkouts={getWorkouts} />
+      <WorkoutForm workouts={workouts} setWorkouts={setWorkouts} />
     </div>
   )
 }
